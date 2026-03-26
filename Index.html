@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIPORT ASSISTANT STUDENT FAQ CHATBOT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <img src="https://uniport.edu.ng/wp-content/uploads/2020/03/uniport-logo.png" 
+             alt="UNIPORT Logo" class="uniport-logo" 
+             onerror="this.style.display='none'">
+        <h1>UNIPORT ASSISTANT Students Chatbot</h1>
+        <p>Get answers to your questions about admissions, academics, hostels, and more</p>
+    </div>
+
+    <!-- Authentication Container -->
+    <div id="auth-container" class="auth-container auth-background">
+        <!-- Login Form -->
+        <div id="login-form">
+            <h2>Login</h2>
+            <div class="form-group">
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" required>
+            </div>
+            <div class="form-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" required>
+                <div id="login-error" class="error-message"></div>
+            </div>
+            <button id="login-button">Login</button>
+            <div class="toggle-form">
+                Don't have an account? <a id="show-signup">Sign up</a>
+            </div>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="signup-form" class="hidden">
+            <h2>Sign Up</h2>
+            <div class="form-group">
+                <label for="signup-username">Username</label>
+                <input type="text" id="signup-username" required>
+            </div>
+            <div class="form-group">
+                <label for="signup-email">Email</label>
+                <input type="email" id="signup-email" required>
+            </div>
+            <div class="form-group">
+                <label for="signup-password">Password</label>
+                <input type="password" id="signup-password" required minlength="8">
+                <small>Password must be at least 8 characters</small>
+                <div id="signup-error" class="error-message"></div>
+            </div>
+            <button id="signup-button">Sign Up</button>
+            <div class="toggle-form">
+                Already have an account? <a id="show-login">Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Container (hidden until authenticated) -->
+    <div id="chat-container" class="chat-container hidden">
+        <div class="welcome-message">
+            <p>Welcome back, <span id="username-display"></span>! Ask me anything about UNIPORT.</p>
+            <p>Visit the <a href="https://aris.uniport.edu.ng" target="_blank">UNIPORT ARIS Portal</a> for official services.</p>
+        </div>
+
+        <div class="chat-messages" id="chat-messages">
+            <!-- Messages will appear here -->
+        </div>
+
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="Type your question here...">
+            <button id="send-button">Send</button>
+        </div>
+
+        <div class="suggestions">
+            <p>Try asking:</p>
+            <button class="suggestion-btn">How do I apply for admission?</button>
+            <button class="suggestion-btn">How much is UNIPORT school fees?</button>
+            <button class="suggestion-btn">How do I check my exam results?</button>
+            <button class="suggestion-btn">Are there hostels available?</button>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-top: 15px;">
+            <button id="clear-chat" style="background-color: #280783;">Clear Chat</button>
+            <button id="logout-button" style="background-color: #ce0606;">Logout</button>
+        </div>
+    </div>
+
+    <!-- New History Panel Elements -->
+    <button class="history-toggle-btn hidden" id="history-toggle">📜</button>
+    <div class="overlay" id="history-overlay"></div>
+    <div class="history-panel" id="history-panel">
+        <div class="history-header">
+            <h3>Chat History</h3>
+            <button class="close-history" id="close-history">&times;</button>
+        </div>
+        <div id="history-list">
+            <!-- History items will be added here -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
