@@ -1,0 +1,506 @@
+/* All your existing CSS remains exactly the same */
+body {
+    font-family: 'Arial', sans-serif;
+    max-width: 500px;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    background-image: linear-gradient(rgba(245, 245, 245, 0.9), rgba(245, 245, 245, 0.9)),
+                      url('https://uniport.edu.ng/wp-content/uploads/2020/03/uniport-logo.png');
+    background-size: content;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.header {
+    background-color: rgba(0, 51, 102, 0.9);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 50px 50px 0 0;
+    backdrop-filter: blur(10px);
+}
+
+.auth-container, .chat-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #002244;
+    transform: translateY(-2px);
+}
+
+.toggle-form {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.toggle-form a {
+    color: #003366;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.chat-messages {
+    height: 400px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border-radius: 18px;
+    max-width: 70%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    word-wrap: break-word;
+}
+
+.user-message {
+    background-color: #e3f2fd;
+    margin-left: auto;
+    border-bottom-right-radius: 4px;
+}
+
+.bot-message {
+    background-color: #57cce0;
+    margin-right: auto;
+    border-bottom-left-radius: 4px;
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+#send-button {
+    padding: 10px 20px;
+}
+
+.suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.suggestion-btn {
+    padding: 6px 12px;
+    background-color: #0e0342;
+    border: 1px solid #003366;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 14px;
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.suggestion-btn:hover {
+    background-color: #bbdefb;
+    color: #000;
+    transform: translateY(-1px);
+}
+
+.welcome-message {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000a0c;
+}
+
+.uniport-logo {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.error-message {
+    color: red;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.hidden {
+    display: none;
+}
+
+.typing-indicator {
+    display: flex;
+    padding: 8px 12px;
+    background-color: #180680;
+    border-radius: 18px;
+    margin-right: auto;
+    border-bottom-left-radius: 4px;
+    width: fit-content;
+}
+
+.typing-dot {
+    width: 8px;
+    height: 8px;
+    background-color: hsl(180, 28%, 90%);
+    border-radius: 50%;
+    margin: 0 2px;
+    animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.typing-dot:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.typing-dot:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes typing {
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-5px); }
+}
+
+.auth-background {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+                      url('https://uniport.edu.ng/wp-content/uploads/2020/03/uniport-campus.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.timestamp {
+    font-size: 0.7em;
+    color: #666;
+    margin-top: 5px;
+    text-align: right;
+}
+
+.chat-date-divider {
+    text-align: center;
+    margin: 15px 0;
+    color: #666;
+    font-size: 0.9em;
+    position: relative;
+}
+
+.chat-date-divider::before,
+.chat-date-divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+    margin: auto;
+}
+
+.chat-date-divider::before {
+    margin-right: 10px;
+}
+
+.chat-date-divider::after {
+    margin-left: 10px;
+}
+
+/* New styles for history panel */
+.history-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.history-panel.show {
+    transform: translateX(0);
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.history-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.history-item:hover {
+    background-color: #e3f2fd;
+}
+
+.history-item-date {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #003366;
+}
+
+.history-item-preview {
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.history-toggle-btn {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    z-index: 1001;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+    display: none;
+}
+
+.overlay.show {
+    display: block;
+}
+
+.close-history {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #003366;
+}
+
+
+.typing-dot {
+    width: 8px;
+    height: 8px;
+    background-color: hsl(180, 28%, 90%);
+    border-radius: 50%;
+    margin: 0 2px;
+    animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.typing-dot:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.typing-dot:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes typing {
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-5px); }
+}
+
+.auth-background {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+                      url('https://uniport.edu.ng/wp-content/uploads/2020/03/uniport-campus.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.timestamp {
+    font-size: 0.7em;
+    color: #666;
+    margin-top: 5px;
+    text-align: right;
+}
+
+.chat-date-divider {
+    text-align: center;
+    margin: 15px 0;
+    color: #666;
+    font-size: 0.9em;
+    position: relative;
+}
+
+.chat-date-divider::before,
+.chat-date-divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+    margin: auto;
+}
+
+.chat-date-divider::before {
+    margin-right: 10px;
+}
+
+.chat-date-divider::after {
+    margin-left: 10px;
+}
+
+/* New styles for history panel */
+.history-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.history-panel.show {
+    transform: translateX(0);
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.history-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.history-item:hover {
+    background-color: #e3f2fd;
+}
+
+.history-item-date {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #003366;
+}
+
+.history-item-preview {
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.history-toggle-btn {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    z-index: 1001;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+    display: none;
+}
+
+.overlay.show {
+    display: block;
+}
+
+.close-history {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #003366;
+}
+
